@@ -2,8 +2,14 @@
 
 A small utility package I wrote for a side-project for fetching summaries of Wikipedia pages.
 
-## Usage
+## Installation
 
+You can install the package with:
+```
+pip install wikipediasummary
+```
+
+## Usage
 ```
 from wikipedia_summary import WikipediaSummary
 wiki = WikipediaSummary()
