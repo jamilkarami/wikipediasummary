@@ -16,7 +16,7 @@ class Fetcher():
             title = page_dict['title']
             url = page_dict['content_urls']['desktop']['page']
             summary = page_dict['extract']
-            description = page_dict['description']
+            description = None if 'description' not in page_dict else page_dict['description']
             thumbnail_url = None if 'thumbnail' not in page_dict else page_dict['thumbnail']['source']
             image_url = None if 'originalimage' not in page_dict else page_dict['originalimage']['source']
 
