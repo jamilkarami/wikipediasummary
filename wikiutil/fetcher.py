@@ -11,14 +11,14 @@ class Fetcher():
         most_relevant_result = self.get_most_relevant_result(query)
         if most_relevant_result:
             page_details = self.get_page_details(self.process_query(most_relevant_result))
-            page_dict = json.loads(page_details)
+            page_dict : dict = json.loads(page_details)
 
-            title = page_dict['title']
-            url = page_dict['content_urls']['desktop']['page']
-            summary = page_dict['extract']
-            description = None if 'description' not in page_dict else page_dict['description']
-            thumbnail_url = None if 'thumbnail' not in page_dict else page_dict['thumbnail']['source']
-            image_url = None if 'originalimage' not in page_dict else page_dict['originalimage']['source']
+            title = page_dict.get('title')
+            url = page_dict.get('content_urls').get('desktop').get('page')
+            summary = page_dict.get('extract')
+            description = page_dict.get('description')
+            thumbnail_url = page_dict.get('thumbnail').get('source')
+            image_url = page_dict.get('originalimage').get('source')
 
             return WikipediaPage(title, url, summary, description, thumbnail_url, image_url)
         return None
