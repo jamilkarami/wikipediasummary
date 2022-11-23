@@ -17,8 +17,8 @@ class Fetcher():
             url = page_dict.get('content_urls').get('desktop').get('page')
             summary = page_dict.get('extract')
             description = page_dict.get('description')
-            thumbnail_url = page_dict.get('thumbnail').get('source')
-            image_url = page_dict.get('originalimage').get('source')
+            thumbnail_url = page_dict.get('thumbnail').get('source') if 'thumbnail' in page_dict else None
+            image_url = page_dict.get('originalimage').get('source') if 'originalimage' in page_dict else None
 
             return WikipediaPage(title, url, summary, description, thumbnail_url, image_url)
         return None
