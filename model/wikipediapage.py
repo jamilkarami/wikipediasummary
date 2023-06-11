@@ -1,14 +1,29 @@
+class WikipediaPage:
 
-class WikipediaPage():
-    title : str
-    url: str
-    summary: str
-    description : str
-    thumbnail_url : str
-    image_url : str
+    def __init__(
+        self, title: str, url: str, summary: str, description: str,
+        thumbnail_url: str, image_url: str,
+    ) -> None:
+        """
+        Class to represent a wikipedia page details summary.
 
-    # title, url, summary, description, thumbnail_url, image_url
-    def __init__(self, title: str, url : str, summary : str, description: str, thumbnail_url : str, image_url: str) -> None:
+        ...
+
+        Attributes
+        ----------
+        title : str
+            full title of the wikipedia page
+        url : str
+            url of the page
+        summary : str
+            short summary of the page (e.g. "Singer from the Netherlands")
+        description: str
+            fleshed-out summary with more details
+        thumbnail_url: str
+            url that points to the thumbnail image of the page
+        image_url: str
+            url that points to the full size image of the page
+        """
         self.title = title
         self.url = url
         self.summary = summary

@@ -1,7 +1,7 @@
 from wikiutil.fetcher import Fetcher
 
-class WikipediaSummary():
-    fet : Fetcher
+
+class WikipediaSummary:
 
     def __init__(self) -> None:
         self.fet = Fetcher()
